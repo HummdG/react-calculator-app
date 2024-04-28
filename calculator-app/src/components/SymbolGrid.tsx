@@ -1,10 +1,22 @@
-function SymbolGrid() {
+interface SymbolGridProps {
+  concatenateStrings: (btnTxt: string) => void;
+  clearText: () => void;
+}
+
+function SymbolGrid(props: SymbolGridProps) {
   function buttonTemplate(btnTxt: string) {
     return (
       <button
         className="btn btn-warning"
         type="button"
         style={{ width: "10rem", fontSize: "1rem" }}
+        onClick={() => {
+          if (btnTxt === "AC") {
+            props.clearText(); // Call clearText function if button is "AC"
+          } else {
+            props.concatenateStrings(btnTxt); // Otherwise, concatenate strings
+          }
+        }}
       >
         {btnTxt}
       </button>

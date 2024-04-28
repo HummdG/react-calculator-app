@@ -8,11 +8,17 @@ function App() {
   const concatenateStrings = (value: string) => {
     setBtnPressValue(btnPressValue + value);
   };
+  const clearText = () => {
+    setBtnPressValue("");
+  };
   return (
     <>
       <div>
         <TextField input={btnPressValue} />
-        <SymbolGrid />
+        <SymbolGrid
+          concatenateStrings={concatenateStrings}
+          clearText={clearText}
+        />
         <NumberGrid concatenateStrings={concatenateStrings} />
       </div>
     </>
