@@ -11,6 +11,9 @@ function App() {
   const clearText = () => {
     setBtnPressValue("");
   };
+  const calculate = () => {
+    setBtnPressValue(eval(btnPressValue));
+  };
   return (
     <>
       <div>
@@ -18,6 +21,7 @@ function App() {
         <SymbolGrid
           concatenateStrings={concatenateStrings}
           clearText={clearText}
+          calculate={calculate}
         />
         <NumberGrid concatenateStrings={concatenateStrings} />
       </div>

@@ -1,5 +1,5 @@
 interface textProps {
-  input: string;
+  input: string | number;
 }
 
 function TextField(props: textProps) {

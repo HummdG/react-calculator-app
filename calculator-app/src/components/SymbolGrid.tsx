@@ -1,6 +1,7 @@
 interface SymbolGridProps {
   concatenateStrings: (btnTxt: string) => void;
   clearText: () => void;
+  calculate: () => void;
 }
 
 function SymbolGrid(props: SymbolGridProps) {
@@ -13,8 +14,10 @@ function SymbolGrid(props: SymbolGridProps) {
         onClick={() => {
           if (btnTxt === "AC") {
             props.clearText(); // Call clearText function if button is "AC"
+          } else if (btnTxt === "=") {
+            props.calculate(); // Otherwise, concatenate strings
           } else {
-            props.concatenateStrings(btnTxt); // Otherwise, concatenate strings
+            props.concatenateStrings(btnTxt);
           }
         }}
       >
